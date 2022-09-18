@@ -9,11 +9,11 @@
 	let install_dir: string = name
 		? `/home/steam/${name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}`
 		: '';
-	const url = `${variables.basePath}/server'`;
+	const url = `${variables.basePath}/server`;
 	async function save(): Promise<void> {
 		const resp = await fetch(url, {
 			method: 'POST',
-			body: JSON.stringify({ name: name, login: login, install_dir: install_dir })
+			body: JSON.stringify({ name: name, login: login, install_dir: install_dir, id: parseInt(id) })
 		});
 
 		if (resp.ok) {
