@@ -56,7 +56,7 @@
 			<UnorderedList>
 				{#each apps as a}
 					<ListItem>
-						<Link href={`/server/create?name=${a.name}&id=${a.appid}`}
+						<Link href={`/servers/create?name=${a.name}&id=${a.appid}`}
 							>{`ID: ${a.appid} Name: ${a.name}`}</Link
 						></ListItem
 					>

@@ -6,7 +6,7 @@
 <Header platformName="Steam Server Manager" company="SSM" href="/">
 	<HeaderNav>
 		<HeaderNavItem href="/apps" text="Steam Applications" />
-		<HeaderNavItem href="/server" text="Servers" />
+		<HeaderNavItem href="/servers" text="Servers" />
 	</HeaderNav>
 	<h1>Title</h1>
 </Header>
