@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { variables } from '$lib/variables';
-	import { Column, Grid, ListItem, Row, UnorderedList } from 'carbon-components-svelte';
-	import type { Server } from 'src/lib/types';
+	import { Button, Column, Grid, ListItem, Row, UnorderedList } from 'carbon-components-svelte';
+	import type { Server } from '$lib/types';
 
 	const url = `${variables.basePath}/server`;
 	async function getServers(): Promise<Server[]> {
@@ -32,7 +32,10 @@
 			{:then list}
 				<UnorderedList>
 					{#each list as server}
-						<ListItem>{server.id} - {server.name}</ListItem>
+						<ListItem>
+							<p>{server.id} - {server.name}</p>
+							<Button href={`/servers/install/${server.id}`}>Install</Button>
+						</ListItem>
 					{/each}
 				</UnorderedList>
 			{/await}
