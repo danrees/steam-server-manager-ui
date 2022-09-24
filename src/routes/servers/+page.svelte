@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { variables } from '$lib/variables';
-	import { Button, Column, Grid, ListItem, Row, UnorderedList } from 'carbon-components-svelte';
+	import {
+		Button,
+		Column,
+		Grid,
+		ListItem,
+		Loading,
+		Row,
+		UnorderedList
+	} from 'carbon-components-svelte';
 	import type { Server } from '$lib/types';
 
 	const url = `${variables.basePath}/server`;
@@ -28,7 +36,7 @@
 	<Row
 		><Column>
 			{#await promise}
-				<p>Loading Server list</p>
+				<Loading />
 			{:then list}
 				<UnorderedList>
 					{#each list as server}
