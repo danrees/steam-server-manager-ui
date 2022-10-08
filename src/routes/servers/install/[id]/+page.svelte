@@ -16,11 +16,11 @@
 			messages = [...messages, e.data];
 		};
 	});
-	onDestroy(async () => {
-		if (eventSource) {
-			eventSource.close();
-		}
-	});
+	// onDestroy(async () => {
+	// 	if (eventSource) {
+	// 		eventSource.close();
+	// 	}
+	// });
 
 	const load = async (): Promise<Server> => {
 		const url = `${variables.basePath}/server/${data.id}`;

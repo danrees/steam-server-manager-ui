@@ -24,6 +24,15 @@
 		}
 	}
 
+	async function deleteServer(id: number): Promise<any> {
+		let resp = await fetch(`${url}/${id}`, { method: 'DELETE' });
+		if (resp.ok) {
+			return;
+		} else {
+			throw new Error('unable to delete');
+		}
+	}
+
 	let promise = getServers();
 </script>
 
@@ -43,6 +52,7 @@
 						<ListItem>
 							<p>{server.id} - {server.name}</p>
 							<Button href={`/servers/install/${server.id}`}>Install</Button>
+							<Button on:click={() => deleteServer(server.id)}>Delete</Button>
 						</ListItem>
 					{/each}
 				</UnorderedList>

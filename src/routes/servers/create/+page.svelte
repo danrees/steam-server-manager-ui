@@ -6,9 +6,7 @@
 	let id: string = $page.url.searchParams.get('id') || '';
 	let name: string = $page.url.searchParams.get('name') || '';
 	let login: string = 'anonymous';
-	let install_dir: string = name
-		? `/home/steam/${name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}`
-		: '';
+	let install_dir: string = name ? `${name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}` : '';
 	const url = `${variables.basePath}/server`;
 	async function save(): Promise<void> {
 		const resp = await fetch(url, {
